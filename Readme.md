@@ -5,6 +5,8 @@
 2. Create an API that can Get a JWT token when a valid username and password are present.
 3. Create an API GET student details :
 (Note: Based on token if the user is a student)
+4. Create PATCH API to update the subjects of a teacher.
+5. Create a simple report to show the below template using Django Templates.
 
 ## Methodology:
 1. Created custom user for whom roles can be assigned.
