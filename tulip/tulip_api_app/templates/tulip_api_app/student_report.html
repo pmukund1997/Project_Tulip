@@ -1,0 +1,46 @@
+{% extends "tulip_api_app/base.html" %}
+ {% block main %} 
+    <h1> Students Report</h1>
+    <table class="tulip_table">
+        <tr> 
+            <th>ID</th> 
+            <th>Student Name</th> 
+            <th>Teachers</th> 
+            <th>Subjects</th> 
+        </tr>
+        {% for stu in student_details %}
+        <tr>
+            <td>
+               {{ stu.student_id }}
+            </td>
+            <td>
+               {{ stu.student_name }}
+            </td>
+            <td>
+                {% for tchr in stu.teachers %}
+                    {% if tchr == stu.teachers|last %}
+                        {{ tchr}}
+                    {% else %}
+                        {{ tchr}}, 
+                    {% endif %}
+                {% endfor %}
+            </td>
+            <td>
+                {% for sub in stu.subjects %}
+                    {% if sub == stu.subjects|last %}
+                        {{ sub}}
+                    {% else %}
+                        {{ sub}}, 
+                    {% endif %}
+
+                {% endfor %}
+            </td>
+               
+        </tr>
+            
+        {% endfor %}
+
+
+    </table>
+    
+ {% endblock main %} 
